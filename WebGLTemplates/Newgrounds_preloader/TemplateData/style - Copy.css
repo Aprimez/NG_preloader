@@ -1,0 +1,81 @@
+.webgl-content * {border: 0; margin: 0; padding: 0}
+.webgl-content {position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
+
+.webgl-content .logo, .progress {position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
+.webgl-content .logo {background: url('progressLogo.Light.png') no-repeat center / contain; width: 154px; height: 130px;}
+.webgl-content .progress {height: 18px; width: 141px; margin-top: 90px;}
+.webgl-content .progress .empty {background: url('progressEmpty.Light.png') no-repeat right / cover; float: right; width: 100%; height: 100%; display: inline-block;}
+.webgl-content .progress .full {background: url('progressFull.Light.png') no-repeat left / cover; float: left; width: 0%; height: 100%; display: inline-block;}
+
+.webgl-content .logo.Dark {background-image: url('progressLogo.Dark.png');}
+.webgl-content .progress.Dark .empty {background-image: url('progressEmpty.Dark.png');}
+.webgl-content .progress.Dark .full {background-image: url('progressFull.Dark.png');}
+
+.webgl-content .footer {margin-top: 5px; height: 38px; line-height: 38px; font-family: Helvetica, Verdana, Arial, sans-serif; font-size: 18px;} 
+.webgl-content .footer .webgl-logo, .title, .fullscreen {height: 100%; display: inline-block; background: transparent center no-repeat;} 
+.webgl-content .footer .webgl-logo {background-image: url('webgl-logo.png'); width: 204px; float: left;}
+.webgl-content .footer .title {margin-right: 10px; float: right;}
+.webgl-content .footer .fullscreen {background-image: url('fullscreen.png'); width: 38px; float: right;}
+
+#ngLogo {
+    width: 300px;
+    height: 300px;
+    background-image:url(ng_tank.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    margin: 20px;
+    top: 0px;
+    margin-top: 170px;
+  }
+  #ngBeams {
+    width: 500px;
+    height: 500px;
+    background-image:url(ng_beams.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    background-position: bottom;
+  }
+  .rotate {
+   animation: rotateDiv 6s infinite linear;
+   width: 500px;
+   height: 500px;
+   position: absolute;
+  }
+  .background-container {
+    width: 340px;
+    height: 340px;
+    position: absolute;
+    overflow: hidden;
+    border: 10px black solid;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .placement {
+    margin: -80px;
+    overflow: hidden;
+  }
+  .newgrounds-logo {
+    background-image:url(newgroundstitle.png);
+    width: 340px;
+    height: 70px;
+    background-color: black;
+    position: absolute;
+    background-size: 60%;
+    background-position: center 10px;
+    background-repeat: no-repeat;
+    bottom: 0px;
+  }
+  @keyframes rotateDiv {
+    0%   {transform: rotate(0)}
+    50%  {transform: rotate(180deg)}
+    100% {transform: rotate(360deg)}
+}
+.webgl-content .progress {
+  margin-top: 157px;
+  bottom: 0;
+  height: 17px;
+}

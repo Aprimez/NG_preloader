@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | %UNITY_WEB_NAME%</title>
+    <link rel="stylesheet" type="text/css" href="TemplateData/style.css">
+    <script src="%UNITY_WEBGL_LOADER_URL%"></script>
+    <script>
+    var gameInstance = UnityLoader.instantiate("gameContainer", "%UNITY_WEBGL_BUILD_URL%", {onProgress: UnityProgress});
+    function UnityProgress(gameInstance, progress) {
+    if (!gameInstance.Module)
+      return;
+    if (!gameInstance.logo) {
+      gameInstance.logo = document.createElement("div");
+      gameInstance.logo.className = "logo " + gameInstance.Module.splashScreenStyle;
+      gameInstance.container.appendChild(gameInstance.logo);
+    }
+    if (!gameInstance.ngLogo) {
+      gameInstance.ngLogo = document.createElement("div");
+      gameInstance.ngLogo.className = "background-container";
+      gameInstance.container.appendChild(gameInstance.ngLogo);
+
+      gameInstance.ngLogoPlacement = document.createElement("div");
+      gameInstance.ngLogoPlacement.className = "placement";
+      gameInstance.ngLogo.appendChild(gameInstance.ngLogoPlacement);
+
+      gameInstance.ngLogoRotate = document.createElement("div");
+      gameInstance.ngLogoRotate.className = "rotate";
+      gameInstance.ngLogoPlacement.appendChild(gameInstance.ngLogoRotate);
+
+      gameInstance.ngLogoBeams = document.createElement("div");
+      gameInstance.ngLogoBeams.id = "ngBeams";
+      gameInstance.ngLogoRotate.appendChild(gameInstance.ngLogoBeams);
+
+      gameInstance.ngLogoImage = document.createElement("div");
+      gameInstance.ngLogoImage.id = "ngLogo";
+      gameInstance.ngLogo.appendChild(gameInstance.ngLogoImage);
+
+      gameInstance.newgroundsLogo = document.createElement("div");
+      gameInstance.newgroundsLogo.className = "newgrounds-logo";
+      gameInstance.ngLogo.appendChild(gameInstance.newgroundsLogo);
+    }
+    if (!gameInstance.progress) {    
+      gameInstance.progress = document.createElement("div");
+      gameInstance.progress.className = "progress " + gameInstance.Module.splashScreenStyle;
+      gameInstance.progress.empty = document.createElement("div");
+      gameInstance.progress.empty.className = "empty";
+      gameInstance.progress.appendChild(gameInstance.progress.empty);
+      gameInstance.progress.full = document.createElement("div");
+      gameInstance.progress.full.className = "full";
+      gameInstance.progress.appendChild(gameInstance.progress.full);
+      gameInstance.ngLogo.appendChild(gameInstance.progress);
+    }
+    gameInstance.progress.full.style.width = (100 * progress) + "%";
+    gameInstance.progress.empty.style.width = (100 * (1 - progress)) + "%";
+    if (progress == 1)
+      gameInstance.logo.style.display = gameInstance.progress.style.display =  gameInstance.ngLogo.style.display = "none";
+    }
+    </script>
+  </head>
+  
+  <body>
+    <div class="webgl-content">
+     <div id="gameContainer" style="width: %UNITY_WIDTH%px; height: %UNITY_HEIGHT%px; margin: auto"></div>
+    </div>
+  </body>
+  
+</html>

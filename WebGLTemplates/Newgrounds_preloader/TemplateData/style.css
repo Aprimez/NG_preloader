@@ -1,0 +1,143 @@
+@keyframes rotateDiv {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.webgl-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.webgl-content * {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.webgl-content .logo,
+.webgl-content .progress {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.webgl-content .logo {
+  background: url('progressLogo.Light.png') no-repeat center / contain;
+  width: 154px;
+  height: 130px;
+}
+.webgl-content .logo.Dark {
+  background-image: url('progressLogo.Dark.png');
+}
+.webgl-content .progress {
+  margin-top: 157px;
+  bottom: 0;
+  height: 17px;
+  width: 141px;
+}
+.webgl-content .progress .empty {
+  background: url('progressEmpty.Light.png') no-repeat right / cover;
+  float: right;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+.webgl-content .progress .full {
+  background: url('progressFull.Light.png') no-repeat left / cover;
+  float: left;
+  width: 0%;
+  height: 100%;
+  display: inline-block;
+}
+.webgl-content .progress.Dark .empty {
+  background-image: url('progressEmpty.Dark.png');
+}
+.webgl-content .progress.Dark .full {
+  background-image: url('progressFull.Dark.png');
+}
+.webgl-content .footer {
+  margin-top: 5px;
+  height: 38px;
+  line-height: 38px;
+  font-family: Helvetica, Verdana, Arial, sans-serif;
+  font-size: 18px;
+}
+.webgl-content .footer .footer .webgl-logo,
+.webgl-content .footer .footer .title,
+.webgl-content .footer .footer .fullscreen {
+  height: 100%;
+  display: inline-block;
+  background: transparent center no-repeat;
+}
+.webgl-content .footer .footer .webgl-logo {
+  background-image: url('webgl-logo.png');
+  width: 204px;
+  float: left;
+}
+.webgl-content .footer .footer .title {
+  margin-right: 10px;
+  float: right;
+}
+.webgl-content .footer .footer .fullscreen {
+  background-image: url('fullscreen.png');
+  width: 38px;
+  float: right;
+}
+.webgl-content .background-container {
+  width: 340px;
+  height: 340px;
+  position: absolute;
+  overflow: hidden;
+  border: 10px black solid;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.webgl-content .background-container .placement {
+  margin: -80px;
+  overflow: hidden;
+}
+.webgl-content .background-container .placement .rotate {
+  animation: rotateDiv 6s infinite linear;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+}
+.webgl-content .background-container .placement #ngBeams {
+  width: 500px;
+  height: 500px;
+  background-image: url(ng_beams.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute;
+  background-position: bottom;
+}
+.webgl-content .background-container #ngLogo {
+  width: 300px;
+  height: 300px;
+  background-image: url(ng_tank.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  margin: 20px;
+  top: 0px;
+  margin-top: 170px;
+}
+.webgl-content .background-container .newgrounds-logo {
+  background-image: url(newgroundstitle.png);
+  width: 340px;
+  height: 70px;
+  background-color: black;
+  position: absolute;
+  background-size: 60%;
+  background-position: center 10px;
+  background-repeat: no-repeat;
+  bottom: 0px;
+}
